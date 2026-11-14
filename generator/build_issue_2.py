@@ -222,9 +222,9 @@ STORIES = [
                 "including one with a suspected intelligence operative. NVIDIA announced the transition itself. The coverage "
                 "turns to whether the AI boom keeps its momentum in the post-Jensen era, with rival chips waiting. The week "
                 "watched the person who was the face of the boom leave the stage.")),
-    dict(eyebrow="Reading · theme two", title="Black creative legacy", count_label="8 items",
+    dict(eyebrow="Reading · theme two", title="Black creative legacy", count_label="7 items",
          ids=["00000001To00O4SSByXp60", "00000001To00O4RJawvUn6", "00000001To00O4SSgPG7Hq", "00000001To00O4S0Jp2yHK",
-              "00000001To00O4QOlyHgWc", "00000001To00O4QKpYhm4o", "00000001To00O4Ru1V2JVu", "00000001To00O4RhsCmewo"],
+              "00000001To00O4QOlyHgWc", "00000001To00O4QKpYhm4o", "00000001To00O4Ru1V2JVu"],
          intro=("The Basquiat documentary, already a Tribeca winner, lands a Netflix release date. Soul Patrol tells the story "
                 "of the army's first all-Black Long-Range Reconnaissance Patrol in Vietnam, teenage soldiers in six-man teams. "
                 "Scott Colom becomes Mississippi's next US senator, the state's first Black senator since Reconstruction, in the "
@@ -232,7 +232,7 @@ STORIES = [
                 "talks about art's job in volatile times. Zanele Muholi sits for a one-on-one on photographing Black LGBTQIA+ "
                 "life. Reggie Burrows Hodges, who came to painting in his forties from tennis coaching and reggae, gets a "
                 "profile. Mildred Thompson, rejected by New York dealers in the sixties, rebuilt her career in Germany and "
-                "painted the invisible. And a Mean Girls screenshot keeps the Unfriendly Black Hotties joke alive.")),
+                "painted the invisible.")),
     dict(eyebrow="Reading · theme three", title="Who pays for art?", count_label="5 items",
          ids=["00000001To00O4SSAW8PjW", "00000001To00O4S4Z5bWEg", "00000001To00O4RukOHs9q", "00000001To00O4RFyXkU2k",
               "00000001To00O4RJ64yI8M"],
@@ -241,24 +241,6 @@ STORIES = [
                 "collectors split between showing and hiding what they own. Art schools are closing while tuition climbs, and "
                 "the piece on their impossible economics names the structural cause. And an MBA course at USC will teach the "
                 "business of Beyoncé for sixteen weeks.")),
-    dict(eyebrow="Reading · theme four", title="DC, then and now", count_label="7 items",
-         ids=["00000001To00O4S0wLRheg", "00000001To00O4Sx42GsVO", "00000001To00O4REq5pnfW", "00000001To00O4REtdIlTa",
-              "00000001To00O4ReCCiUta", "00000001To00O4REddzXLq", "00000001To00O4RJbugtfG"],
-         intro=("Houdini hung upside down from the Albee Building at 15th and G in January 1922 and escaped a straitjacket in "
-                "front of thousands. This week, JoJo headlines CityCenterDC's tree lighting on exactly those streets. The MLK "
-                "Library hosts DC Zinefest and District Arcade with thirty local indie games. The library card itself is up for "
-                "redesign, with a contest open to any cardholder over five. Pottery on the Hill marks fifteen years in the Old "
-                "Naval Hospital. And Deanwood gets a twenty-seven million dollar standalone library to replace its rec-center "
-                "corner.")),
-    dict(eyebrow="Reading · theme five", title="The machine room", count_label="6 items",
-         ids=["00000001To00O4T8Gdv0oo", "00000001To00O4SlLZzF16", "00000001To00O4QmikbkiI", "00000001To00O4Sbyd7w9W",
-              "00000001To00O4RZXdeGDC", "00000001To00O4SSzQqFEs"],
-         intro=("llama.cpp hits v1.0.0, a milestone for running models locally in plain C. Unsloth ships Dynamic V3.1 "
-                "quantizations of Qwen3.8-27B, claiming benchmark wins. Anthropic publishes how agent memory works, including "
-                "offline processing it calls dreaming. Peter Yang walks through the AI stack that runs his one-person business "
-                "across ChatGPT, Claude Code, and Grok. Security closes the loop from both ends: thirty-five thousand Grok-built "
-                "apps found exposed online, some leaking credentials, and Binance warning about an iOS flaw that could read "
-                "private keys.")),
 ]
 
 pics, textcards, used = 0, 0, set()
@@ -375,12 +357,12 @@ html = f'''<!DOCTYPE html>
   <header class="masthead">
     <p class="kicker">Issue No. 2 &nbsp;·&nbsp; Week of November 7 – 14, 2026 &nbsp;·&nbsp; From your MyMind saves</p>
     <h1>One Piece of MyMind</h1>
-    <p class="deck">One week of your saves, arranged into six picture themes and six reading stories. Nothing repeats, and nothing is here by accident.</p>
+    <p class="deck">One week of your saves, arranged into six picture themes and four reading stories. Nothing repeats, and nothing is here by accident.</p>
   </header>
   {"".join(sections_html)}
 
   <section class="story">
-    <div class="eyebrow">The reading · six stories</div>
+    <div class="eyebrow">The reading · four stories</div>
     <h2>The reading</h2>
     <p class="intro">The written side of the week: the articles and videos, grouped by what they share.</p>
     {"".join(stories_html)}
@@ -388,7 +370,7 @@ html = f'''<!DOCTYPE html>
 
   <footer>
     Built from {len(objs)} MyMind saves for the week &nbsp;·&nbsp; {pics} pictures and {textcards} text entries across six picture
-    themes and six reading stories, {placed} saves placed &nbsp;·&nbsp; pictures come from MyMind's own stored images, each page's
+    themes and four reading stories, {placed} saves placed &nbsp;·&nbsp; pictures come from MyMind's own stored images, each page's
     own preview, and same-vibe saves from earlier months &nbsp;·&nbsp; <a href="/" style="color:var(--red-dim)">Issue 1</a> lives here too.
   </footer>
 </div>
