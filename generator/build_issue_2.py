@@ -17,6 +17,13 @@ BOT = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html) 
 
 ASSETS.mkdir(parents=True, exist_ok=True)
 objs = json.load(open("/tmp/pom2_week.json"))
+# TAG EXCLUSIONS (EST 2026-11-14): private/noshare/mine/nsfw never featured or named
+BAD_TAGS = {"private", "noshare", "mine", "nsfw"}
+def flagged(o):
+    t = o.get("tags") or []
+    names = {str((x.get("name") if isinstance(x, dict) else x) or "").lower() for x in t}
+    return bool(names & BAD_TAGS)
+objs = [o for o in objs if not flagged(o)]
 by_id = {o.get("id"): o for o in objs}
 
 def esc(s): return htmlmod.escape(s or "", quote=True)
